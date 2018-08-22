@@ -1,5 +1,5 @@
 class Instructor < ApplicationRecord
     has_many :cohorts
-    validates :age, numericality: { age < 150 }
-    validates :salary, numericality: { salary > 0 }
+    validates :age, numericality: { less_than: 150 }
+    validates :salary, numericality: { more_than: 0 }
 end
