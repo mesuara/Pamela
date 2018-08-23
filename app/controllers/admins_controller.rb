@@ -3,6 +3,10 @@ class AdminsController < ApplicationController
       @admin = Admin.all
     end
 
+    def show
+      @admin = Admin.(params[:id])
+    end
+
     def new
       @new_admin = Admin.new
     end

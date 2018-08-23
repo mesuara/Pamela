@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,cAAc,CAAA;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,KAAK;CAErB;;AAED,AAAA,eAAe,CAAA;EACX,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,KAAK;CACrB",
+    "sources": [
+        "instructor.scss"
+    ],
+    "names": [],
+    "file": "instructor.css"
+}

@@ -1,0 +1,3 @@
+class AdminsStudentsController < ApplicationController
+    
+end

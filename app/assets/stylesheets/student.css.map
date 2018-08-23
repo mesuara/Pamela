@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,WAAW,CAAA;EACP,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,KAAK;CACrB;;AAED,AAAA,YAAY,CAAA;EACR,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,KAAK;CACrB",
+    "sources": [
+        "student.scss"
+    ],
+    "names": [],
+    "file": "student.css"
+}

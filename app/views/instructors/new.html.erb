@@ -11,24 +11,10 @@
   
  </div>
 
+ <h3>New Instructor</h3>
+ <%= render 'form' %>
  
- <div class="pusher">
-   <!-- Site content !-->
-   <div id="newinstructor">
-   <%= form_with model: Instructor.new do |form| %>
-    <%= form.text_field :name, placeholder: "Enter Name"%>
-    <%= form.text_field :last_name, placeholder: "Enter lastname"%>
-    <%= form.text_field :age, placeholder: "Enter age"%>
-    <%= form.text_field :salary, placeholder: "Enter salary"%>
-    <%= form.text_field :eduacation, placeholder: "Enter eduacation"%>
-    <%= form.text_field :email, placeholder: "Enter email"%>s
-    <%= form.text_field :password, placeholder: "Enter password"%>
-    
-    <%= form.submit %>
-   <%end%>
    </div>
-
-
 
    </div>
 

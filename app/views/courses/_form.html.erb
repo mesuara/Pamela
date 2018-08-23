@@ -1,0 +1,22 @@
+
+<%= form_for @courses do |f| %>
+    <div id="newinstructor">
+    <div>
+      <% f.label :name %>Name: 
+      <%= f.text_field :name %>
+    </div>
+  
+    <div>
+      <% f.label :total_hours%> Total Hours: 
+      <%= f.number_field :total_hours %>
+    </div>
+  
+    
+    
+    <div>
+      <%= f.submit %>
+      <%= link_to 'Back', '/courses' %>
+    </div>
+    
+    </div>
+  <% end %>

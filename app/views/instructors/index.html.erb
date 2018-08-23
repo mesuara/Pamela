@@ -19,7 +19,10 @@
 <% @instructor.each do |inst| %>
 
     <h1> <%= inst.name %></h1>
-
+    <h4><%= link_to 'Show', inst %></h4>
+        <h4><%= link_to 'Edit', edit_instructor_path(inst) %></h4>
     <%end%>
+
+   
 </div>
  </div>

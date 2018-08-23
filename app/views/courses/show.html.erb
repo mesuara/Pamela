@@ -1,0 +1,16 @@
+<div id="showinstructor">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @courses.name %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @courses.total_hours %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@courses)%> 
+<%= link_to 'Back', '/courses' %>
+</div>

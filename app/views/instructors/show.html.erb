@@ -1,0 +1,16 @@
+<div id="showinstructor">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @instructor.last_name %>
+</p>
+
+<%= link_to 'Edit', edit_instructor_path(@instructor)%> 
+<%= link_to 'Back', '/instructors' %>
+</div>
