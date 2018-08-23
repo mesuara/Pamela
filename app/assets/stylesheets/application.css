@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ .ui.top.fixed.menu {
+     display: flex;
+     justify-content: flex-end;
+ }
+ div .ui.compact.menu{
+     height: 40px;
+     margin-top: 30px;
+ }
+ #home{
+     margin-top: 30px;
+     margin-right: 10px;
+ }
+ #about{
+    margin-top: 30px;
+    margin-right: 10px;
+ }

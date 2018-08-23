@@ -1,0 +1,34 @@
+<div id="main" class="ui vertical inverted left visible sidebar menu" style= "background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);">
+   <a href="/"> <h1 id="logo">Instructor</h1></a>
+   
+  
+   <a class="item" href="/muffins" style= "margin-top:100px;" id="first">
+    name 
+   </a>
+   <a class="item" href="/cookies">
+     last_name 
+   </a>
+  
+ </div>
+
+ 
+ <div class="pusher">
+   <!-- Site content !-->
+   <div id="newinstructor">
+   <%= form_with model: Instructor.new do |form| %>
+    <%= form.text_field :name, placeholder: "Enter Name"%>
+    <%= form.text_field :last_name, placeholder: "Enter lastname"%>
+    <%= form.text_field :age, placeholder: "Enter age"%>
+    <%= form.text_field :salary, placeholder: "Enter salary"%>
+    <%= form.text_field :eduacation, placeholder: "Enter eduacation"%>
+    <%= form.text_field :email, placeholder: "Enter email"%>s
+    <%= form.text_field :password, placeholder: "Enter password"%>
+    
+    <%= form.submit %>
+   <%end%>
+   </div>
+
+
+
+   </div>
+

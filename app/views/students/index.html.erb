@@ -1,0 +1,23 @@
+<div id="main" class="ui vertical inverted left visible sidebar menu" style= "background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);">
+   <a href="/"> <h1 id="logo">Student</h1></a>
+   
+  
+   <a class="item" href="/muffins" style= "margin-top:100px;" id="first">
+    name 
+   </a>
+   <a class="item" href="/cookies">
+     last_name 
+   </a>
+  
+ </div>
+
+ 
+ <div class="pusher">
+<div id ="showstudent">
+<% @student.each do |one| %>
+    <h1> <%= one.name %></h1>
+
+    <%end%>
+</div>
+
+</div>

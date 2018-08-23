@@ -1,0 +1,42 @@
+
+<%= form_for @instructor do |f| %>
+    <div id="newinstructor">
+    <div>
+      <% f.label :name %>First Name: 
+      <%= f.text_field :name %>
+    </div>
+  
+    <div>
+      <% f.label :last_name %>Last Name: 
+      <%= f.text_field :last_name %>
+    </div>
+  
+    <div>
+      <% f.label :age%>age: 
+      <%= f.number_field :age %>
+    </div>
+  
+    <div>
+      <% f.label :salary %>Salary: 
+      <%= f.number_field :salary %>
+    </div>
+  
+    <div>
+      <% f.label :education %>Highest Level of Education: 
+      <%= f.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
+    </div>
+
+    <div>
+      <% f.label :email %>Email: 
+      <%= f.label :email %>
+    </div>
+    <div>
+    <% f.label :email %>Password: 
+    <%= f.text_field :password %>
+  </div>
+    
+    <div>
+      <%= f.submit %>
+    </div>
+    </div>
+  <% end %>
