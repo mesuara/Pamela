@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   resources :cohorts
   resources :courses
   resources :admins
-
-  namespace :admins do
-    resources :cohorts, :students, :course, :instructors
+  
+  resources :instructors do
+    resources :cohorts, only: [:index, :show]
   end
-end
+#   namespace :admins do
+#     resources :cohorts, :students, :course, :instructors
+#   end
+ end

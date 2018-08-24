@@ -2,7 +2,7 @@
    <a href="/"> <h1 id="logo">Instructor</h1></a>
    
   
-   <a class="item" href="/instructor/new" style= "margin-top:100px;" id="first">
+   <a class="item" href="/instructors/new" style= "margin-top:100px;" id="first">
    Add 
    </a>
    <a class="item" href="/instructor/:id/edit">
@@ -19,6 +19,7 @@
 <% @instructor.each do |inst| %>
 
     <h1> <%= inst.name %></h1>
+    
     <h4><%= link_to 'Show', inst %></h4>
         <h4><%= link_to 'Edit', edit_instructor_path(inst) %></h4>
     <%end%>

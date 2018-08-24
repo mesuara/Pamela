@@ -1,22 +1,26 @@
 
-<%= form_for @courses do |f| %>
-    <div id="newinstructor">
-    <div>
-      <% f.label :name %>Name: 
-      <%= f.text_field :name %>
+<div class="ui form">
+  <%= form_for @courses do |f| %>
+
+    <div class="field">
+      <% f.label :name%>Name:
+      <%= f.text_field :name%>
     </div>
-  
-    <div>
+
+    <div class="field">
       <% f.label :total_hours%> Total Hours: 
       <%= f.number_field :total_hours %>
     </div>
   
-    
-    
-    <div>
+    <div class= "ui button">
       <%= f.submit %>
+      </div>
+      <div class="ui button">
       <%= link_to 'Back', '/courses' %>
     </div>
-    
+    <% end %>
+
     </div>
-  <% end %>
+  
+  
+  

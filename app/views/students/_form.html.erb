@@ -1,38 +1,43 @@
+<div class="ui form">
 <%= form_for @student do |f| %>
-    <div id="newinstructor">
-    <div>
+    
+    <div class="field">
       <% f.label :name %>Name: 
       <%= f.text_field :name %>
     </div>
   
-    <div>
+    <div class="field">
       <% f.label :last_name%> Star date: 
       <%= f.date_field :last_name %>
     </div>
 
-    <div>
+    <div class="field">
     <% f.label :age%> Age: 
     <%= f.number_field :age %>
   </div>
 
-  <div>
+  <div class="field">
   <% f.label :email%> Email: 
   <%= f.text_field :email %>
 </div>
   
-<div>
+<div class="field">
 <% f.label :password%> Course: 
 <%= f.password_field :password %>
 </div>
 
-<div>
+<div class="field">
 <% f.label :cohort_id%> Cohort: 
 <%= f.text_field :cohort_id %>
 </div>
 
-    <div>
+    <div class="ui button">
       <%= f.submit %>
-      <%= link_to 'Back', '/students' %>
+      
+    </div>
+
+    <div class="ui button">
+     <%= link_to 'Back', '/students' %>
     </div>
 
     </div>

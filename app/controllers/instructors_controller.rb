@@ -5,10 +5,11 @@ class InstructorsController < ApplicationController
 
       def show
         @instructor = Instructor.find(params[:id])
+        @cohort = Cohort.find(@instructor.id)
     end
 
       def new 
-       @new_instructor = Instructor.new
+       @instructor = Instructor.new
       end
 
       def create

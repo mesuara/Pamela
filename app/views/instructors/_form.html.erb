@@ -1,43 +1,46 @@
-
+<div class="ui form">
 <%= form_for @instructor do |f| %>
-    <div id="newinstructor">
-    <div>
+  
+    <div class="field">
       <% f.label :name %>First Name: 
       <%= f.text_field :name %>
     </div>
   
-    <div>
+    <div class="field">
       <% f.label :last_name %>Last Name: 
       <%= f.text_field :last_name %>
     </div>
   
-    <div>
+    <div class="field">
       <% f.label :age%>age: 
       <%= f.number_field :age %>
     </div>
   
-    <div>
+    <div class="field" >
       <% f.label :salary %>Salary: 
       <%= f.number_field :salary %>
     </div>
   
-    <div>
+    <div class="field">
       <% f.label :education %>Highest Level of Education: 
       <%= f.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
     </div>
 
-    <div>
+    <div class="field">
       <% f.label :email %>Email: 
-      <%= f.label :email %>
+      <%= f.text_field :email %>
     </div>
-    <div>
+
+    <div class="field">
     <% f.label :email %>Password: 
     <%= f.text_field :password %>
   </div>
     
-    <div>
+    <div class="ui button">
       <%= f.submit %>
-      <%= link_to 'Back', '/instructors' %>
+    </div>
+    <div class="ui button">
+    <%= link_to 'Back', '/instructors' %>
     </div>
     </div>
   <% end %>

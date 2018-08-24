@@ -29,3 +29,13 @@
     margin-top: 30px;
     margin-right: 10px;
  }
+
+ div .ui.form{
+     width: 200px;
+    margin-top: 200px;
+    margin-right: 100px;
+    
+ }
+ .ui.form .field, .ui.form .fields .field{
+     width: 200px;
+ }

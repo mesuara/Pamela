@@ -7,8 +7,16 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Last Name:</strong>
   <%= @instructor.last_name %>
+</p>
+<p>
+  <strong> Email:</strong>
+  <%= @instructor.email %>
+</p>
+<p>
+  <strong>Cohort</strong>
+  <a href="/instructors/cohorts/<%=@cohort.id%>"><%=@cohort.name%></a>
 </p>
 
 <%= link_to 'Edit', edit_instructor_path(@instructor)%> 

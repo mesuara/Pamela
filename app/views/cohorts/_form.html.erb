@@ -1,36 +1,51 @@
+<div id="main" class="ui vertical inverted left visible sidebar menu" style= "background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);">
+   <a href="/"> <h1 id="logo">Cohorts</h1></a>
+   
+  
+   <a class="item" href="/cohorts/new" style= "margin-top:100px;" id="first">
+   Add 
+   </a>
+   <a class="item" href="/instructor/:id/edit">
+     Edits
+   </a>
+  
+ </div>
+<div class="ui form">
 <%= form_for @cohorts do |f| %>
-    <div id="newinstructor">
-    <div>
+    
+    <div class="field">
       <% f.label :name %>Name: 
       <%= f.text_field :name %>
     </div>
   
-    <div>
+    <div class="field">
       <% f.label :start_hours%> Star date: 
       <%= f.date_field :start_date %>
     </div>
 
-    <div>
+    <div class="field">
     <% f.label :end_hours%> End date: 
     <%= f.date_field :end_date %>
   </div>
 
-  <div>
+  <div class="field">
   <% f.label :instructor_id%> Instructor: 
   <%= f.number_field :instructor_id %>
 </div>
   
-<div>
+<div class="field">
 <% f.label :course_id%> Course: 
 <%= f.number_field :course_id %>
 </div>
     
     
-    <div>
+    <div class="ui button">
       <%= f.submit %>
-      <%= link_to 'Back', '/cohorts' %>
+      
     </div>
-
+    <divn class="ui button">
+    <%= link_to 'Back', '/cohorts' %>
+    </div>
     </div>
   <% end %>
 

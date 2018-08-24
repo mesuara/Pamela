@@ -14,4 +14,14 @@
   margin-top: 100px;
   margin-left: 300px;
 }
+
+form#new_instructor.new_instructor {
+  margin-top: 100px;
+  margin-left: 400px;
+}
+
+form.edit_instructor {
+  margin-top: 100px;
+  margin-left: 400px;
+}
 /*# sourceMappingURL=instructor.css.map */

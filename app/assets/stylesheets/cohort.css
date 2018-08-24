@@ -1,1 +1,15 @@
-/* No CSS *//*# sourceMappingURL=cohort.css.map */
+form#new_course.new_course {
+  margin-top: 100px;
+  margin-left: 400px;
+}
+
+form.edit_course {
+  margin-top: 100px;
+  margin-left: 400px;
+}
+
+.formtitle {
+  margin-top: 100px;
+  margin-left: 400px;
+}
+/*# sourceMappingURL=cohort.css.map */
