@@ -5,8 +5,9 @@
 <div id ="showstudent">
 <% if current_user && current_user.student %>
     <h1 id="onestudent"> <%= @student.name %></h1>
-
-<% else %>
+    <h4><%= link_to 'Show', @student %></h4>
+  
+<%else%>
 <% @student.each do |one| %>
     <h1> <%= one.name %></h1>
     <h4><%= link_to 'Show', one %></h4>
