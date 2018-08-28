@@ -1,25 +1,19 @@
-<div id="main" class="ui vertical inverted left visible sidebar menu" style= "background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);">
-   <a href="/"> <h1 id="logo">Student</h1></a>
-   
-  
-   <a class="item" href="/students/new" style= "margin-top:100px;" id="first">
-   Add
-   </a>
-   <a class="item" href="/cookies">
-     last_name 
-   </a>
-  
- </div>
+
 
  
  <div class="pusher">
 <div id ="showstudent">
+<% if current_user && current_user.student %>
+    <h1 id="onestudent"> <%= @student.name %></h1>
+
+<% else %>
 <% @student.each do |one| %>
     <h1> <%= one.name %></h1>
     <h4><%= link_to 'Show', one %></h4>
         <h4><%= link_to 'Edit', edit_student_path(one) %></h4>
 
     <%end%>
+<%end%>
 </div>
 
 </div>

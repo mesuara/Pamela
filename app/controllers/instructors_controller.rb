@@ -1,5 +1,7 @@
 class InstructorsController < ApplicationController
-    def index 
+  before_action :authenticate_user!, except: [:index]  
+  
+  def index 
         @instructor = Instructor.all
       end
 
@@ -13,11 +15,17 @@ class InstructorsController < ApplicationController
       end
 
       def create
-    #    @instructor =  Instructor.create(name: params[:instructor][:name], last_name: params[:instructor][:last_name],age: params[:instructor][:age], salary: params[:instructor][:salary],education: params[:instructor][:eduacation], email: params[:instructor][:email], password: params[:instructor][:password])
-       Instructor.create(instructor_params)
-       p "i am create"
-     
+        if current_user && current_user.admin
+          @instructor_user = User.create(email: params[:instructor][:email], password: params[:instructor][:password], instructor: true)
+          @id = @instructor_user.id
+          # @instructor = Instructor.create(instructor_params)
+          # @instructor.user_id = @id
+      @instructor =  Instructor.create(name: params[:instructor][:name], last_name: params[:instructor][:last_name],age: params[:instructor][:age], salary: params[:instructor][:salary],education: params[:instructor][:eduacation], email: params[:instructor][:email], password: params[:instructor][:password],user_id: @id)
+      #  @instructor = Instructor.create(instructor_params)
         redirect_to '/instructors'
+      else 
+        "<h1> Sorry you're not admin</h1>"
+      end
       end
 
       def edit

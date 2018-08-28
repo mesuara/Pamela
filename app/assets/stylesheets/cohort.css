@@ -1,11 +1,11 @@
-form#new_course.new_course {
+form#new_cohort.new_cohort {
   margin-top: 100px;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
-form.edit_course {
+form.edit_cohort {
   margin-top: 100px;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
 .formtitle {

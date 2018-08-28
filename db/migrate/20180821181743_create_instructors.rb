@@ -8,6 +8,7 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.string :education
       t.string :email
       t.string :password
+      t.references :user
       t.timestamps
     end
   end

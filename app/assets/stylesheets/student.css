@@ -1,10 +1,20 @@
-form#new_cohort.new_cohort {
+form#new_student.new_student {
   margin-top: 100px;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
-form.edit_cohort {
+form.edit_student {
   margin-top: 100px;
-  margin-left: 400px;
+  margin-left: 600px;
+}
+
+h1#onestudent {
+  margin-top: 200px;
+  margin-left: 600px;
+}
+
+div#showstudent {
+  margin-left: 600px;
+  margin-top: 200px;
 }
 /*# sourceMappingURL=student.css.map */

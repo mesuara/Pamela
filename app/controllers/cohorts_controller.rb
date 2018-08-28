@@ -1,5 +1,7 @@
 class CohortsController < ApplicationController
-    def index
+    before_action :authenticate_user!, except: [:index]
+  
+  def index
         @cohorts = Cohort.all
       end
     

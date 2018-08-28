@@ -7,6 +7,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password
       t.references :cohort
+      t.references :user
       t.timestamps
     end
   end

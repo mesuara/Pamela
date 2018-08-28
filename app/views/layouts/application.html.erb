@@ -19,19 +19,47 @@
   <div class="ui top fixed menu">
    <h1 id="home"> Home </h1>
    <h1 id="about"> About Us </h1>
+   <% if current_user %>
+<h1> <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </h1>
+<div id="main" class="ui vertical inverted left visible sidebar menu" style= "background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);">
+   
+    <img id="adminimg"src="http://ubiatarplay.io/wp-content/uploads/2018/03/04_avatar_neutral.png">
+ 
+  
+   <a class="item" href="/admins">
+     Dashboard <i class="home icon"></i>
+   </a>
+   <a class="item" href="/instructors">
+     Instructors <i class="user md icon"></i>
+   </a>
+   <a class="item" href="/students">
+     Students <i class="users icon"></i>
+   </a>
+  
+ </div>
+ 
+ <div class="pusher">
+   <!-- Site content !-->
+   
+   </div>
+<%else %>
+
    <div class="ui compact menu">
   <div class="ui simple dropdown item">
     Sign in
     <i class="dropdown icon"></i>
     <div class="menu">
-      <div class="item">Student</div>
-      <div class="item">Instructor</div>
-      <div class="item">Admin</div>
+      <div class="item"><%= link_to 'Student', new_user_session_path %></div>
+      <div class="item"><%= link_to 'Instructor', new_user_session_path %></div>
+      <div class="item"><%= link_to 'Admin', new_user_session_path %></div>
     </div>
   </div>
+  <%end%>
 </div>
 
 </div>
+  
+
     <%= yield %>
   </body>
 </html>
