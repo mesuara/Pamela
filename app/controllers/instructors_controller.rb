@@ -2,12 +2,27 @@ class InstructorsController < ApplicationController
   before_action :authenticate_user!, except: [:index]  
   
   def index 
+    if current_user && current_user.admin || current_user.instructor
         @instructor = Instructor.all
+      elsif current_user && current_user.student
+        @user_id = current_user.id
+        @student = Student.find_by(user_id: @user_id)
+        @cohort = Cohort.find(@student.cohort_id)
+        @instructor = Instructor.find(@cohort.instructor_id)
+    
+      end
       end
 
-      def show
+      def show 
+        if current_user && current_user.admin
         @instructor = Instructor.find(params[:id])
-        @cohort = Cohort.find(@instructor.id)
+        @cohort = Cohort.find_by(instructor_id: @instructor.id)
+        elsif current_user && current_user.instructor
+          @instructor = Instructor.find_by(user_id: current_user.id)
+          pp @instuctor
+          @cohort = Cohort.find_by(instructor_id: @instructor.id)
+
+        end
     end
 
       def new 
@@ -34,9 +49,13 @@ class InstructorsController < ApplicationController
       end
     
       def update
+        if current_user && current_user.admin
         instructor = Instructor.find(params[:id])
         instructor.update(instructor_params)
         redirect_to '/instructors'
+      else 
+        "<h1> Sorry you're not admin</h1>"
+      end
       end
     
     

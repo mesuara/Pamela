@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
     
       def show
         @courses = Course.find(params[:id])
+        
       end
     
       def new
@@ -14,8 +15,13 @@ class CoursesController < ApplicationController
       end
     
       def create
+        if current_user && current_user.admin
         Course.create(course_params)
         redirect_to courses_path
+      else 
+        "<h1> Sorry you're not admin</h1>"
+    
+        end
       end
     
       def edit
@@ -23,9 +29,14 @@ class CoursesController < ApplicationController
       end
     
       def update
+        if current_user && current_user.admin
         courses = Course.find(params[:id])
         course.update(course_params)
         redirect_to courses_path
+      else 
+        "<h1> Sorry you're not admin</h1>"
+    
+        end
       end
 
       private

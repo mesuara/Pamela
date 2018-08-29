@@ -24,6 +24,8 @@
   <strong>Course :</strong>
   <%= @cohorts.course_id %>
 </p>
+<% if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_cohort_path(@cohorts)%> 
+<%end%>
 <%= link_to 'Back', '/cohorts' %>
 </div>

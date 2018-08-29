@@ -4,6 +4,7 @@
  <div class="pusher">
 
 <div id ="showinstructor">
+<% if current_user && current_user.admin %>
 <% @cohorts.each do |coho| %>
 
     <h1> <%= coho.name %></h1>
@@ -11,6 +12,9 @@
         <h4><%= link_to 'Edit', edit_cohort_path(coho) %></h4>
     <%end%>
 
-   
+  <%else%>
+  <h1> <%= @cohorts.name %></h1>
+  <h4><%= link_to 'Show', @cohorts %></h4>
+  <%end%>
 </div>
  </div>

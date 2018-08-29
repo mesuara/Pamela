@@ -26,6 +26,8 @@
   <%= @cohort.name %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student)%> 
+<% if current_user && current_user.admin %>
+<%= link_to 'Edit', edit_cohort_path(@cohorts)%> 
+<%end%>
 <%= link_to 'Back', '/students' %>
 </div>

@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
         @cohort = Cohort.find(@student.cohort_id)
         pp @student
       elsif current_user && current_user.instructor
-        @instructor = Instructor.find_by(user_id: @current_user.id)
+        @instructor = Instructor.find_by(user_id: current_user.id)
         pp @instructor
         @cohort = Cohort.find_by(instructor_id: @instructor.id)
         pp @cohort
@@ -58,12 +58,16 @@ class StudentsController < ApplicationController
           end
         
           def update
+            if current_user && current_user.admin
             student = Student.find(params[:id])
             user = User.find(student.user_id)
             user.update(email: params[:student][:email], password: params[:student][:password], student: true)
             student.update(student_params)
             
             redirect_to '/students'
+          else 
+            "<h1> Sorry you're not admin</h1>"
+          end
           end
         
         

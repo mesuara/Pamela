@@ -11,6 +11,8 @@
   <%= @courses.total_hours %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@courses)%> 
+<% if current_user && current_user.admin %>
+<%= link_to 'Edit', edit_cohort_path(@cohorts)%> 
+<%end%>
 <%= link_to 'Back', '/courses' %>
 </div>
