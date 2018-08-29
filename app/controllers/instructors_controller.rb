@@ -57,6 +57,13 @@ class InstructorsController < ApplicationController
         "<h1> Sorry you're not admin</h1>"
       end
       end
+
+      def destroy
+        @instructor = Instructor.find(params[:id])
+        @instructor.destroy
+        redirect_to instructors_path
+    end
+    
     
     
     

@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     
       def show
         @courses = Course.find(params[:id])
-        
+
       end
     
       def new
@@ -37,6 +37,12 @@ class CoursesController < ApplicationController
         "<h1> Sorry you're not admin</h1>"
     
         end
+      end
+
+      def destroy
+          @courses = Course.find(params[:id])
+          @courses.destroy
+          redirect_to courses_path
       end
 
       private

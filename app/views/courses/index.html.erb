@@ -6,10 +6,12 @@
 
 <div id ="showinstructor">
 <% @courses.each do |cours| %>
-
+    <div id ="courses-<%=cours.id%>">
     <h1> <%= cours.name %></h1>
     <h4><%= link_to 'Show', cours %></h4>
         <h4><%= link_to 'Edit', edit_course_path(cours) %></h4>
+        <%= link_to 'Destroy', course_path(cours), method: :delete, remote:true, data: { confirm: 'Are you sure?' } %>
+     </div>
     <%end%>
 
    

@@ -65,6 +65,13 @@ class CohortsController < ApplicationController
         "<h1> Sorry you're not admin</h1>"
       end
       end
+
+      def destroy
+        @cohort = Cohort.find(params[:id])
+        @cohort.destroy
+        redirect_to cohorts_path
+    end
+
       private
       def cohort_params
         params.require(:cohort).permit(:name, :start_date, :end_date, :instructor_id, :course_id)
