@@ -5,19 +5,39 @@
 
 <div id ="showinstructor">
 <% if current_user && current_user.admin %>
+<table class="ui fixed single line celled table">
+<thead>
+  <tr><th>Name</th>
+  <th>Update</th>
+</tr></thead>
+<tbody>
 <% @cohorts.each do |coho| %>
+    <tr>
     <div id ="cohort-<%=coho.id%>">
-    <h1> <%= coho.name %></h1>
-    <h4><%= link_to 'Show', coho %></h4>
-        <h4><%= link_to 'Edit', edit_cohort_path(coho) %></h4>
+    <td> <%= coho.name %></td>
+    <td><%= link_to 'Show', coho %>
+        <%= link_to 'Edit', edit_cohort_path(coho) %>
         <%= link_to 'Destroy', cohort_path(coho), method: :delete, remote:true, data: { confirm: 'Are you sure?' } %>
+        </td>
         </div>
+       </tr>
        
     <%end%>
-
+    </tbody>
+    </table>
   <%else%>
-  <h1> <%= @cohorts.name %></h1>
-  <h4><%= link_to 'Show', @cohorts %></h4>
+  <table class="ui fixed single line celled table">
+  <thead>
+  <tr><th>Name</th>
+  <th>See more</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td> <%= @cohorts.name %></td>
+ <td><%= link_to 'Show', @cohorts %></td>
+  </tr>
+  </tbody>
+  </table>
   <%end%>
 </div>
  </div>

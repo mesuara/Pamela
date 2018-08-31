@@ -4,20 +4,40 @@
   <div class="pusher">
   <div id ="showinstructor">
 <%if current_user && current_user.student %>
-    <h1> <%= @instructor.name %> </h1>
-    <h1> <%= @instructor.last_name %> </h1>
-    <h1> <%= @instructor.email %> </h1>
+<table class="ui fixed single line celled table">
+<thead>
+  <tr><th>Name</th>
+  <th>Status</th>
+  <th>Email</th>
+</tr></thead>
+<tbody>
+    <tr>
+    <td> <%= @instructor.name %> </td>
+    <td> <%= @instructor.last_name %> </td>
+    <td> <%= @instructor.email %> </td>
+    </tr>
 <%else %>
+<table class="ui fixed single line celled table">
+<thead>
+  <tr><th>Name</th>
+  <th>Status</th>
+  <th>Email</th>
+  <th>Update</th>
+</tr></thead>
+<tbody>
 <% @instructor.each do |inst| %>
+    <tr>
     <div id="instructor-<%=inst.id%>">
-    <h1> <%= inst.name %></h1>
-    <h1> <%= inst.email %> </h1>
+    <td><%= inst.name %></td>
+    <td><%= inst.last_name %></td>
+    <td><%= inst.email %> </td>
     
-    <h4><%= link_to 'Show', inst %></h4>
+    <td id="update"><%= link_to 'Show', inst %>
     <% if current_user && current_user.admin %>
     <%= link_to 'Edit', edit_instructor_path(inst)%> 
-    <%= link_to 'Destroy', instructor_path(inst), method: :delete, remote:true, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Destroy', instructor_path(inst), method: :delete, remote:true, data: { confirm: 'Are you sure?' } %></td>
     <%end%>
+    </tr>
         <%end%>
    
    <%end%>

@@ -5,13 +5,25 @@
  <div class="pusher">
 
 <div id ="showinstructor">
+<table class="ui fixed single line celled table">
+<thead>
+  <tr><th>Name</th>
+  <th>See more</th>
+  </thread>
+  <tbody>
+
 <% @courses.each do |cours| %>
     <div id ="courses-<%=cours.id%>">
-    <h1> <%= cours.name %></h1>
-    <h4><%= link_to 'Show', cours %></h4>
-        <h4><%= link_to 'Edit', edit_course_path(cours) %></h4>
+    <tr>
+    <td> <%= cours.name %></td>
+    <td><%= link_to 'Show', cours %>
+    <% if current_user && current_user.admin %>
+        <%= link_to 'Edit', edit_course_path(cours) %>
         <%= link_to 'Destroy', course_path(cours), method: :delete, remote:true, data: { confirm: 'Are you sure?' } %>
-     </div>
+     <%end %>
+     </td>
+        </div>
+     </tr>
     <%end%>
 
    
