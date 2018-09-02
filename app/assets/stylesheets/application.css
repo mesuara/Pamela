@@ -16,10 +16,11 @@
  .ui.top.fixed.menu {
      display: flex;
      justify-content: flex-end;
+     height: 40px;
  }
  div .ui.compact.menu{
      height: 40px;
-     margin-top: 30px;
+     /* margin-top: 20px; */
  }
  #home{
      margin-top: 30px;
@@ -73,6 +74,50 @@
 
 #article{
     margin-left: 600px;
-    margin-top: 200px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.articleimg{
+    margin: 20px;
     
+}
+
+.author{
+    margin-left: 550px;
+    
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+    width: 750px;
+}
+
+#newwlc{
+    margin-top: 100px;
+    margin-left: 550px;
+    color: grey;
+    font-size: 40px;
+    border-bottom: 2px solid grey;
+}
+
+.signout{
+    font-size:20px;
+    padding-right: 10px;
+    /* padding: 20px; */
+}
+#logo{
+    margin-right: 1200px;
+}
+
+#minion{
+    display: fixed;
+    margin-right: 900px;
+    margin-top: 200px;
 }

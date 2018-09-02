@@ -30,19 +30,24 @@ $(document).ready(function() {
             let more = response.articles[i].url;
             let image = response.articles[i].urlToImage;
             console.log(title)
+            let maincontainer = $('<div>')
+            $(maincontainer).addClass('main')
               let tit = $('<h1>')
               $(tit).text(title)
               let img = $('<img></img>')
               $(img).attr("src", image);
+              $(img).addClass("articleimg")
               let para = $('<p>')
-              $(para).text(description)
+              $(para).text(description )
               let author = $('<h5>')
-              $(author).text(owner)
+              $(author).text("author: " + "'" + owner + "'")
+              $(author).addClass("author")
               let readmore = $('<a>')
               $(readmore).text("readmore...")
               $(readmore).attr("href", more)
 
-            $('#article').append(tit, img, para, readmore, author)
+            $(maincontainer).append(tit, img, para, readmore, author)
+            $('#article').append(maincontainer)
            }
 
             
