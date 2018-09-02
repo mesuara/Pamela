@@ -13,4 +13,48 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+
 //= require_tree .
+//= require jquery
+
+$(document).ready(function() {
+    
+    $.ajax({
+        method: 'GET',
+        url: '/pages/news',
+        success: function(response) {
+           for(let i =0; i<response.articles.length; i++) {
+            let owner = response.articles[i].author;
+            let title = response.articles[i].title;
+            let description = response.articles[i].description;
+            let more = response.articles[i].url;
+            let image = response.articles[i].urlToImage;
+            console.log(title)
+              let tit = $('<h1>')
+              $(tit).text(title)
+              let img = $('<img></img>')
+              $(img).attr("src", image);
+              let para = $('<p>')
+              $(para).text(description)
+              let author = $('<h5>')
+              $(author).text(owner)
+              let readmore = $('<a>')
+              $(readmore).text("readmore...")
+              $(readmore).attr("href", more)
+
+            $('#article').append(tit, img, para, readmore, author)
+           }
+
+            
+            console.log("I am in articles js")
+          
+            
+
+          
+        }
+    
+
+});
+
+});
+
