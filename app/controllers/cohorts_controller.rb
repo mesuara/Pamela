@@ -42,7 +42,7 @@ class CohortsController < ApplicationController
       def create
         if current_user && current_user.admin
         Cohort.create(cohort_params)
-        
+        flash[:notice] = "Cohort successfully created"
         redirect_to cohorts_path
       else 
         "<h1> Sorry you're not admin</h1>"
@@ -60,6 +60,7 @@ class CohortsController < ApplicationController
         if current_user && current_user.admin
         cohort = Cohort.find(params[:id])
         cohort.update(cohort_params)
+        flash[:notice] = "Cohort successfully updated"
         redirect_to cohorts_path
       else 
         "<h1> Sorry you're not admin</h1>"

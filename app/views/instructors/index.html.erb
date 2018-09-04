@@ -3,6 +3,12 @@
 
   <div class="pusher">
   <div id ="showinstructor">
+  <% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %></div>
+<% end %>
+  <% if current_user && current_user.admin %>
+<p id='addnew'> <%= link_to ' Add new instructor', new_instructor_path(@instructor) %> </p>
+<%end%>
 <%if current_user && current_user.student %>
 <table class="ui fixed single line celled table">
 <thead>

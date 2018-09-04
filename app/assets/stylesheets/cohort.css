@@ -12,4 +12,8 @@ form.edit_cohort {
   margin-top: 100px;
   margin-left: 400px;
 }
+
+div.notice {
+  background-color: blue;
+}
 /*# sourceMappingURL=cohort.css.map */

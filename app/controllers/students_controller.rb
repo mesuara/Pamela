@@ -46,6 +46,7 @@ class StudentsController < ApplicationController
           @id = @student_user.id
        @student =  Student.create(name: params[:student][:name], last_name: params[:student][:last_name], age: params[:student][:age], email: params[:student][:email], password: params[:student][:password], cohort_id: params[:student][:cohort_id], user_id: @id)
        p "i am create"
+       flash[:notice] = "Student successfully created"
         redirect_to '/students'
       else 
         "<h1> Sorry you're not admin</h1>"
@@ -63,6 +64,7 @@ class StudentsController < ApplicationController
             user = User.find(student.user_id)
             user.update(email: params[:student][:email], password: params[:student][:password], student: true)
             student.update(student_params)
+            flash[:notice] = "Student successfully updated"
             
             redirect_to '/students'
           else 

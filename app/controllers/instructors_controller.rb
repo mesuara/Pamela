@@ -36,6 +36,7 @@ class InstructorsController < ApplicationController
           # @instructor = Instructor.create(instructor_params)
           # @instructor.user_id = @id
       @instructor =  Instructor.create(name: params[:instructor][:name], last_name: params[:instructor][:last_name],age: params[:instructor][:age], salary: params[:instructor][:salary],education: params[:instructor][:eduacation], email: params[:instructor][:email], password: params[:instructor][:password],user_id: @id)
+      flash[:notice] = "Instructor successfully created"
       #  @instructor = Instructor.create(instructor_params)
         redirect_to '/instructors'
       else 
@@ -52,6 +53,7 @@ class InstructorsController < ApplicationController
         if current_user && current_user.admin
         instructor = Instructor.find(params[:id])
         instructor.update(instructor_params)
+        flash[:notice] = "Instructor successfully updated"
         redirect_to '/instructors'
       else 
         "<h1> Sorry you're not admin</h1>"

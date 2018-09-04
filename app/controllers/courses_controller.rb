@@ -17,6 +17,7 @@ class CoursesController < ApplicationController
       def create
         if current_user && current_user.admin
         Course.create(course_params)
+        flash[:notice] = "Course successfully created"
         redirect_to courses_path
       else 
         "<h1> Sorry you're not admin</h1>"
@@ -31,7 +32,8 @@ class CoursesController < ApplicationController
       def update
         if current_user && current_user.admin
         courses = Course.find(params[:id])
-        course.update(course_params)
+        courses.update(course_params)
+        flash[:notice] = "Course successfully updated"
         redirect_to courses_path
       else 
         "<h1> Sorry you're not admin</h1>"
