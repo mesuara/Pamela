@@ -34,10 +34,24 @@ class CohortsController < ApplicationController
           @instructor = Instructor.find_by(user_id: current_user.id)
           pp @instuctor
           @cohorts = Cohort.find_by(instructor_id: @instructor.id)
+          @studentall = Student.all
+        @student = []
+        @studentall.each do |student|
+          if student.cohort_id == @cohorts.id
+            @student.push(student)
+          end
+        end
         elsif current_user && current_user.student 
           @student = Student.find_by(user_id: current_user.id)
-          @cohorts = Cohort.find(@student.id)
+          @cohorts = Cohort.find(@student.cohort_id)
           @instructor = Instructor.find(@cohorts.instructor_id)
+          @studentall = Student.all
+        @student = []
+        @studentall.each do |student|
+          if student.cohort_id == @cohorts.id
+            @student.push(student)
+          end
+        end
         end
       end
     
