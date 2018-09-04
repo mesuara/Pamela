@@ -8,9 +8,6 @@
 <% if current_user && current_user.admin %>
 <p id='addnew'> <%= link_to ' Add new course', new_course_path(@courses) %> </p>
 <%end%>
-<% if flash[:notice] %>
-<div class="notice"><%= flash[:notice] %></div>
-<% end %>
 
 <table class="ui fixed single line celled table">
 <thead>

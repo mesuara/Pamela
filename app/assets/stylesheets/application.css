@@ -125,3 +125,20 @@
 #addnew{
     margin-left: 10px;
 }
+#adminimg{
+    height: 400px;
+}
+#mainlogo{
+    margin-top: 20px;
+    color: yellow;
+}
+
+.btn{
+    display: flex;
+}
+
+p.notice{
+    z-index: 2;
+    margin-top: 40px !important;
+    margin-left: 1200px;
+}

@@ -30,16 +30,16 @@
 <% f.label :cohort_id%> Cohort: 
 <%= f.text_field :cohort_id %>
 </div>
-
-    <div class="ui button">
-      <%= f.submit %>
+    <div class="btn">
+    <div class="actions">
+    <%= f.submit "submit", :class => "ui positive button active"%>
       
     </div>
 
     <div class="ui button">
      <%= link_to 'Back', '/students' %>
     </div>
-
+    </div>
     </div>
   <% end %>
 

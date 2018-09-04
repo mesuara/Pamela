@@ -23,6 +23,13 @@ class CohortsController < ApplicationController
         @cohorts = Cohort.find(params[:id])
         @instructor_id = @cohorts.instructor_id
         @instructor = Instructor.find(@instructor_id)
+        @studentall = Student.all
+        @student = []
+        @studentall.each do |student|
+          if student.cohort_id == @cohorts.id
+            @student.push(student)
+          end
+        end
         elsif current_user && current_user.instructor
           @instructor = Instructor.find_by(user_id: current_user.id)
           pp @instuctor

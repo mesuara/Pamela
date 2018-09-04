@@ -15,6 +15,22 @@ form.edit_cohort{
     margin-top: 100px;
     margin-left: 400px;
 }
-div.notice{
-    background-color: blue;
+p.notice{
+    background-color: green;
+    color: white;
+    // animation: flash 5s 2s;
+   
+    animation: flash 0.5s 1;
+   
+    animation-fill-mode: forwards;
+
+    animation-delay:2s;
+    -webkit-animation-delay:1s; 
 }
+
+@keyframes flash {
+    0%   {opacity: 1;}
+    70%  {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+  }

@@ -1,14 +1,4 @@
-<div id="main" class="ui vertical inverted left visible sidebar menu" style= "background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);">
-   <a href="/"> <h1 id="logo">Cohorts</h1></a>
-   
-  
-   <a class="item" href="/cohorts/new" style= "margin-top:100px;" id="first">
-   Add 
-   </a>
-   <a class="item" href="/instructor/:id/edit">
-     Edits
-   </a>
-  
+
  </div>
 <div class="ui form">
 <%= form_for @cohorts do |f| %>
@@ -38,13 +28,14 @@
 <%= f.number_field :course_id %>
 </div>
     
-    
-    <div class="ui button">
-      <%= f.submit %>
+    <div class="btn">
+    <div class="actions">
+    <%= f.submit "Submit", :class => "ui positive button active"%>
       
     </div>
     <divn class="ui button">
     <%= link_to 'Back', '/cohorts' %>
+    </div>
     </div>
     </div>
   <% end %>

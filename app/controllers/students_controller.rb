@@ -59,7 +59,7 @@ class StudentsController < ApplicationController
           end
         
           def update
-            if current_user && current_user.admin
+          if current_user && current_user.admin
             student = Student.find(params[:id])
             user = User.find(student.user_id)
             user.update(email: params[:student][:email], password: params[:student][:password], student: true)
@@ -67,6 +67,7 @@ class StudentsController < ApplicationController
             flash[:notice] = "Student successfully updated"
             
             redirect_to '/students'
+            
           else 
             "<h1> Sorry you're not admin</h1>"
           end

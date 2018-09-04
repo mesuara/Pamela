@@ -3,9 +3,7 @@
  
  <div class="pusher">
 <div id ="showstudent">
-<% if flash[:notice] %>
-<div class="notice"><%= flash[:notice] %></div>
-<% end %>
+
 <% if current_user && current_user.student %>
 <table class="ui fixed single line celled table">
 <thead>

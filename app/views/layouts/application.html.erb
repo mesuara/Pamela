@@ -13,6 +13,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
   </head>
 
+<script>
+setTimeout("$('.notice').fadeOut(2000)",100);
+</script>
+
+
   <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
@@ -21,9 +26,14 @@
    <% if current_user %>
 <h1> <%= link_to 'Sign out', destroy_user_session_path, method: :delete , :class => "signout"%> </h1>
 <div id="main" class="ui vertical inverted left visible sidebar menu" style= "background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);">
-   <h1>NYCDA</h1>
+   <h1 id="mainlogo">NYCDA</h1>
+   <% if current_user.admin %>
     <img id="adminimg"src="http://ubiatarplay.io/wp-content/uploads/2018/03/04_avatar_neutral.png">
- 
+   <%elsif current_user.student%>
+   <img id="adminimg" src="https://vignette.wikia.nocookie.net/southpark/images/9/9d/Tweek_pic.png/revision/latest?cb=20160402115548">
+   <%else%>
+   <img id="adminimg" src="https://cdn180.picsart.com/230134075046212.png?r1024x1024">
+   <%end%>
   
    <a id="reload"class="item" href="/">
 
