@@ -12,4 +12,4 @@
 # Cohort.create(name: 'Summer', start_date: DateTime.new(2018,6,18), end_date: DateTime.new(2018,9,26), instructor_id: 1, course_id: 1)
 # Student.create(name: 'Lily', last_name: 'Ngo', age: 20, email: 'lily@gmail.com', password: '321', cohort_id: 1)
 
-User.create!(email: "stude@gmail.com", password: "ilovepizza", student: true)
+User.create!(email: "test@gmail.com", password: "123456", admin: true)
