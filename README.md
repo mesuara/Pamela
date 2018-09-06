@@ -1,25 +1,11 @@
-# README
+# Pamela 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Created an admin panel for a fictitious school whereby the administrator can create users and complete common administrative tasks.
+An admin panel is a website, usually proprietary, that is designed to allow people to do common administrative tasks. The Admin can update, add or delete other users(on this case students or instructors). Student users can only see their info, instructor and cohort. Instructor users can only see their info, they can see other instructors main info only, for the students info they can see their own student within the cohort. The courses info are available for all the users.
 
-Things you may want to cover:
+> Check it out
+[Pamela](https://pamela-admin-platform.herokuapp.com/)
 
-* Ruby version
+> email: test@gmail.com
+> password: 123456
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Pamela
