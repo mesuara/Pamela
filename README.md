@@ -9,3 +9,4 @@ An admin panel is a website, usually proprietary, that is designed to allow peop
 > email: test@gmail.com
 > password: 123456
 
+![Pamela](/sc.png)
