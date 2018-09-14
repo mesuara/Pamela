@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ body{
+     width: 90%;
+     margin: 10px auto;
+ }
  .ui.top.fixed.menu {
      display: flex;
      justify-content: flex-end;
@@ -43,7 +47,7 @@
 
  #login {
     margin-top: 200px;
-    margin-left: 600px;
+    margin-left: 800px;
     background-image: linear-gradient(to left top, #7b8ba1, #657791, #4f6482, #395172, #233f63);
     width: 300px;
     height: auto;
