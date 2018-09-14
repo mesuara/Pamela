@@ -146,3 +146,17 @@ p.notice{
     margin-top: 40px !important;
     margin-left: 1200px;
 }
+
+@media (min-width: 768px) {
+  #login{
+      margin: 50px auto;
+
+  }
+  #minion{
+      display: none;
+  }
+  .ui.top.fixed.menu{
+      display: flex;
+      align-items: center;
+  }
+}
