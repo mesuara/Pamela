@@ -24,7 +24,11 @@
 
 <p>
   <strong>Cohort:</strong>
+  <%if @cohort.nil?%>
+  <a>Not assigned to a Cohort</a>
+  <%else%>
   <%= @cohort.name %>
+  <%end%>
 </p>
 
 <% if current_user && current_user.admin %>

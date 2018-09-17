@@ -20,12 +20,20 @@
 
   <div class="field">
   <% f.label :instructor_id%> Instructor: 
-  <%= f.number_field :instructor_id %>
+  <%= f.select(:instructor_id) do %>
+                <% @instructors.order('last_name ASC').each do |instructor_select| %>
+                  <%= content_tag(:option, instructor_select.last_name, value: instructor_select.id) %>
+                <% end %>
+            <% end %>
 </div>
   
 <div class="field">
 <% f.label :course_id%> Course: 
-<%= f.number_field :course_id %>
+<%= f.select(:course_id) do %>
+                <% @courses.order('name ASC').each do |course_select| %>
+                  <%= content_tag(:option, course_select.name, value: course_select.id) %>
+                <% end %>
+            <% end %>
 </div>
     
     <div class="btn">

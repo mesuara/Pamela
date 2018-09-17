@@ -26,10 +26,11 @@ class StudentsController < ApplicationController
     def show
       if current_user && current_user.admin || current_user.instructor
         @student = Student.find(params[:id])
-        @cohort = Cohort.find(@student.cohort_id)
+        @cohort = @student.cohort
+        
       elsif current_user && current_user.student
         @student = Student.find_by(user_id: current_user.id)
-        @cohort = Cohort.find(@student.cohort_id)
+        @cohort = @student.cohort
 
       end
     end
@@ -37,6 +38,7 @@ class StudentsController < ApplicationController
       def new 
       
        @student = Student.new
+       @cohorts = Cohort.all
        
       end
 
@@ -55,6 +57,7 @@ class StudentsController < ApplicationController
   
           def edit
             @student = Student.find(params[:id])
+            @cohorts = Cohort.all
            
           end
         

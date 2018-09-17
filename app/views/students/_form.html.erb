@@ -28,7 +28,11 @@
 
 <div class="field">
 <% f.label :cohort_id%> Cohort: 
-<%= f.text_field :cohort_id %>
+<%= f.select(:cohort_id) do %>
+                <% @cohorts.order('name ASC').each do |cohort_select| %>
+                  <%= content_tag(:option, cohort_select.name, value: cohort_select.id) %>
+                <% end %>
+            <% end %>
 </div>
     <div class="btn">
     <div class="actions">
