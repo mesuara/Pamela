@@ -12,12 +12,12 @@ An admin panel is a website, usually proprietary, that is designed to allow peop
 ![Pamela](/sc.png)
 
 
-# Built with 
+## Built with 
 * RubyRails - framework for Ruby
 * SASS 
 * Semantic UI
 
-# Acknowledgments
+## Acknowledgments
 
 * [TechCrunch](https://newsapi.org/s/techcrunch-api)
 * [SemanticUI](https://semantic-ui.com/)
